@@ -15,4 +15,4 @@ https://api.live.bilibili.com/User/getUserInfo
 |user_level|true|GET|int|用户等级|
 |silver|true|GET|int|银瓜子|
 |billCoin|true|GET|string|硬币|
-|user_intimacy|GET|POST|int|经验|
+|user_intimacy|true|GET|int|经验|

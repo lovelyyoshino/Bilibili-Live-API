@@ -7,7 +7,7 @@
 [活动PC抽奖](./API.Raffle.md)；
 [活动APP抽奖](./API.YunYing.md)；
 [日常包裹](./API.receive_daily_bag.md)；
-[小电视](./API.smalltvmd)；
+[小电视](./API.smalltv.md)；
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；
 [番剧](./API.bangumi.md)；

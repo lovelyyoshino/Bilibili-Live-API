@@ -1,6 +1,6 @@
 # Bilibili API 第三方文档
 本文clone了[https://github.com/fython/BilibiliAPIDocs](https://github.com/fython/BilibiliAPIDocs)
-视频api，并根据自己获取了bilibili直播相关参数
+番剧相关api，并新增了bilibili直播相关api参数
 ### API 直播间
 [心跳包](./API.heartbeat.md)；
 [用户信息](./API.getUserInfo.md)；

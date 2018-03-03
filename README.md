@@ -10,7 +10,7 @@
 [小电视](./API.smalltv.md)；
 [每日领取扭蛋币](./API.Leafking.md)
 （[链接提供网址](https://github.com/lzghzr/bilive_client/issues/60)）；
-
+[风暴](./API.storm.md)；
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；
 [番剧](./API.bangumi.md)；

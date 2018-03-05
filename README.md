@@ -12,9 +12,9 @@
 （[链接提供网址](https://github.com/lzghzr/bilive_client/issues/60)）；
 [风暴](./API.storm.md)；
 [热门房间](./API.liveList.md)；
-[加入风暴](./API.storm_join.md)
-[硬币兑换](./API.coin.md)
-[获取硬币参数](./API.getStatus.md)
+[加入风暴](./API.storm_join.md)；
+[硬币兑换](./API.coin.md)；
+[获取硬币参数](./API.getStatus.md)；
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；
 [番剧](./API.bangumi.md)；

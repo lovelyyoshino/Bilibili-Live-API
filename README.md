@@ -12,6 +12,7 @@
 （[链接提供网址](https://github.com/lzghzr/bilive_client/issues/60)）；
 [风暴](./API.storm.md)；
 [热门房间](./API.liveList.md)；
+[加入风暴](./API.storm_join.md)
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；
 [番剧](./API.bangumi.md)；

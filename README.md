@@ -1,4 +1,4 @@
-# Bilibili API 第三方文档
+# Bilibili API 直播，番剧文档
 本文clone了[https://github.com/fython/BilibiliAPIDocs](https://github.com/fython/BilibiliAPIDocs)
 番剧相关api，并新增了bilibili直播相关api参数
 ### API 直播间
@@ -10,10 +10,10 @@
 [小电视](./API.smalltv.md)；
 [每日领取扭蛋币](./API.Leafking.md)
 （[链接提供网址](https://github.com/lzghzr/bilive_client/issues/60)）；
-[风暴](./API.storm.md)；
 [热门房间](./API.liveList.md)；
+[检测风暴](./API.storm.md)；
 [加入风暴](./API.storm_join.md)；
-[硬币兑换](./API.coin.md)；
+[双倍硬币兑换](./API.coin.md)；
 [获取硬币参数](./API.getStatus.md)；
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；

@@ -21,7 +21,7 @@
 [双倍硬币兑换](./API.coin.md)；
 [获取硬币参数](./API.getStatus.md)；
 
-[获取实物奖励](./API.box_getStatus.md)；
+[加入实物奖励](./API.box_getStatus.md)；
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；
 [番剧](./API.bangumi.md)；

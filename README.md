@@ -5,12 +5,12 @@
 [心跳包](./API.heartbeat.md)；
 [用户信息](./API.getUserInfo.md)；
 
-[小电视](./API.smalltv.md)；
 [活动PC抽奖](./API.Raffle.md)；
 [活动APP抽奖](./API.YunYing.md)；
-
 [日常包裹](./API.receive_daily_bag.md)；
-[银瓜子验证码获取](./API.sliver.md)；
+[小电视](./API.smalltv.md)；
+
+[硬币验证码获取](./API.sliver.md)；
 [每日领取扭蛋币](./API.Leafking.md)
 （[链接提供网址](https://github.com/lzghzr/bilive_client/issues/60)）；
 
@@ -20,6 +20,8 @@
 
 [双倍硬币兑换](./API.coin.md)；
 [获取硬币参数](./API.getStatus.md)；
+
+[获取实物奖励](./API.box_getStatus.md)；
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；
 [番剧](./API.bangumi.md)；

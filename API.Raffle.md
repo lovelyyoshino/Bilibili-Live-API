@@ -4,7 +4,7 @@
 
 http://api.live.bilibili.com/activity/v1/Raffle/check
 
-需要 App Key 并验证登录状态(Access key)；要求应用申请弹幕权限
+需要 Cookies 并验证登录状态(Cookies)；要求应用申请弹幕权限
 
 #### 参数
 

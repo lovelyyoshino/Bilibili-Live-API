@@ -7,7 +7,6 @@
 
 [活动PC抽奖](./API.Raffle.md)；
 [加入PC抽奖](./API.Raffle_join.md)；
-
 [加入APP抽奖](./API.YunYing.md)；
 [日常包裹](./API.receive_daily_bag.md)；
 [小电视](./API.smalltv.md)；
@@ -52,4 +51,4 @@
 [搜索关键词](./API.suggest.md)；
 [标签](./API.tags.md)；
 [用户信息](./API.userinfo.md)；
-[获取视频信息](./API.view.md)。
+[获取视频信息](./API.view.md).

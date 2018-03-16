@@ -6,7 +6,9 @@
 [用户信息](./API.getUserInfo.md)；
 
 [活动PC抽奖](./API.Raffle.md)；
-[活动APP抽奖](./API.YunYing.md)；
+[加入PC抽奖](./API.Raffle_join.md)；
+
+[加入APP抽奖](./API.YunYing.md)；
 [日常包裹](./API.receive_daily_bag.md)；
 [小电视](./API.smalltv.md)；
 

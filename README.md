@@ -23,6 +23,7 @@
 [获取硬币参数](./API.getStatus.md)；
 
 [加入实物奖励](./API.box_getStatus.md)；
+[批量关注主播](./API.attention.md)；
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；
 [番剧](./API.bangumi.md)；

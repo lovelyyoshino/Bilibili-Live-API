@@ -14,7 +14,7 @@ http://api.live.bilibili.com//YunYing/roomEvent
 |actionKey|true|POST|string|appkey|
 |appkey|true|POST|string|秘钥|
 |device|true|POST|string|设备|
-|event_type|true|POST|string|活动事件|
+|event_type|true|POST|string|活动事件（flower_rain-）|
 |mobi_app|true|POST|string|手机app|
 |platform|false|POST|string|平台|
 |room_id|true|POST|string|房间号|

@@ -3,7 +3,7 @@
 番剧相关api，并新增了bilibili直播相关API参数。
 ### API 直播间
 [心跳包](./API.heartbeat.md)；
-[心跳包](./API.heartbeat.md)；
+[获取cookies与access_key](./API.Login.md)；
 [用户信息](./API.getUserInfo.md)；
 
 [活动PC抽奖](./API.Raffle.md)；

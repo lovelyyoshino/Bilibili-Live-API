@@ -1,10 +1,8 @@
-## APP登录
+## APP登录（获取cookies和access_key）
 
 #### 调用地址
 
 https://passport.bilibili.com/api/v2/oauth2/login
-
-需要 App Key ，并验证登录状态(Access key)
 
 #### 参数
 

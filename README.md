@@ -10,6 +10,7 @@
 [获取有爱社信息](./API.link_group.md)；
 [用户信息](./API.getUserInfo.md)；
 
+[总督亲密度领取](./API.Search.md)；
 [活动PC抽奖](./API.Raffle.md)；
 [加入PC抽奖](./API.Raffle_join.md)；
 [加入APP抽奖](./API.YunYing.md)；

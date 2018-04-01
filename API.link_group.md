@@ -1,4 +1,4 @@
-## 友爱社查询
+## 友爱社信息查询
 
 #### 调用地址
 
@@ -10,4 +10,4 @@ https://api.vc.bilibili.com/link_group/v1/member/my_groups
 
 |字段|必选|传递方式|类型|说明|
 |----|----|--------|----|----|
-|cookie|true|GET|string|发布帐号(必须和 Cookies 帐号一致)|
+|cookie|false|GET|string|发布帐号(必须和 Cookies 帐号一致)|

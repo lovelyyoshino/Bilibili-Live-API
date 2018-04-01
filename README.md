@@ -6,8 +6,8 @@
 [获取cookies与access_key](./API.Login.md)；
 [检查抽奖状态](./API.Room_entry_action.md)；
 
-[有爱社签到](./API.link_setting.md)；
-[获取有爱社信息](./API.link_group.md)；
+[APP端应援团签到](./API.Link_setting.md)；
+[获取应援团信息](./API.Link_group.md)；
 [用户信息](./API.getUserInfo.md)；
 
 [总督亲密度领取](./API.Search.md)；

@@ -4,7 +4,10 @@
 ### API 直播间
 [心跳包](./API.heartbeat.md)；
 [获取cookies与access_key](./API.Login.md)；
-[用户信息](./API.getUserInfo.md)；
+[检查抽奖状态](./API.Room_entry_action.md)；
+
+[有爱社签到](./API.link_setting.md)；
+
 
 [活动PC抽奖](./API.Raffle.md)；
 [加入PC抽奖](./API.Raffle_join.md)；

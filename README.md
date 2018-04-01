@@ -5,6 +5,7 @@
 [心跳包](./API.heartbeat.md)；
 [获取cookies与access_key](./API.Login.md)；
 [检查抽奖状态](./API.Room_entry_action.md)；
+[礼物赠送](./API.Bag_send.md)；
 
 [APP端应援团签到](./API.Link_setting.md)；
 [获取应援团信息](./API.Link_group.md)；

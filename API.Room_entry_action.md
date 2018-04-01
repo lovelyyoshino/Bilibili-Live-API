@@ -13,5 +13,5 @@ https://api.live.bilibili.com/room/v1/Room/room_entry_action
 |cookie|true|POST|string|发布帐号(必须和 Cookies 帐号一致)|
 |room_id|true|POST|string|活动房间|
 |platform|true|POST|string|pc|
-|csrf_token|true|POST|string|eb084644ba03aa194ac75cf6cc68c65f|
+|csrf_token|true|POST|string|与 cookie 中 bili_jct 值一致（fce9ff23db2a8da348172da7e8972020）|
 

@@ -7,7 +7,7 @@
 [检查抽奖状态](./API.Room_entry_action.md)；
 
 [有爱社签到](./API.link_setting.md)；
-
+[获取有爱社信息](./API.link_group.md)；
 
 [活动PC抽奖](./API.Raffle.md)；
 [加入PC抽奖](./API.Raffle_join.md)；

@@ -1,5 +1,5 @@
 # Bilibili API 直播，番剧文档
-本文clone了[https://github.com/fython/BilibiliAPIDocs](https://github.com/fython/BilibiliAPIDocs)
+本文clone了[fython大佬](https://github.com/fython/BilibiliAPIDocs)
 番剧相关api，并新增了bilibili直播相关API参数。
 ### API 直播间
 

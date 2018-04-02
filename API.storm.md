@@ -16,4 +16,4 @@ https://api.live.bilibili.com/lottery/v1/Storm
 |captcha_token|true|GET|
 |captcha_phrase|true|GET|
 |token|true|GET|
-|csrf_token|true|GET|string|跨站点请求伪造|
+|csrf_token|true|GET|string|与 cookie 中 bili_jct 值一致（fce9ff23db2a8da348172da7e8972020）|

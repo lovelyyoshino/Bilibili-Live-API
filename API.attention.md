@@ -13,4 +13,4 @@ https://api.live.bilibili.com/liveact/attention
 |cookie|true|POST|string|发布帐号(必须和 Cookies 帐号一致)|
 |type|true|POST|string|1为关注，0为取消|
 |uid|true|POST|string|直播房间号|
-|csrf_token|true|POST|string|6a1c34efe64b1e8409df0fa270ff2101|
+|csrf_token|true|POST|string|与 cookie 中 bili_jct 值一致（fce9ff23db2a8da348172da7e8972020）|

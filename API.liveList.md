@@ -13,4 +13,4 @@ http://api.live.bilibili.com/area/liveList
 |cookie|true|GET|string|发布帐号(必须和 Cookies 帐号一致)|
 |area|true|GET|string|访问区域|
 |order|true|GET|string|请求模式|
-|page|true|GET|string|页码|
+|page|true|GET|int|页码|

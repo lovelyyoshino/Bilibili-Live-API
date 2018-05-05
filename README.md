@@ -22,10 +22,7 @@
 [加入APP抽奖](./API.YunYing.md)；
 [日常包裹](./API.receive_daily_bag.md)；
 [小电视](./API.smalltv.md)；
-
 [硬币验证码获取](./API.sliver.md)；
-[每日领取扭蛋币](./API.Leafking.md)
-（[链接提供网址](https://github.com/lzghzr/bilive_client/issues/60)）；
 
 [热门房间](./API.liveList.md)；
 [检测风暴](./API.storm.md)；

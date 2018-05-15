@@ -2,7 +2,7 @@
 
 #### 调用地址
 
-http://api.live.bilibili.com/gift/v2/smalltv/check
+https://api.live.bilibili.com/gift/v3/smalltv/check
 
 需要 Cookies，并验证登录状态(Cookies)
 

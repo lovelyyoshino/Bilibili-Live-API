@@ -6,6 +6,7 @@
 ##### Tip:[检测B站api延迟](./Host.md)
 
 [心跳包](./API.heartbeat.md)；
+[检测小黑屋](./API.room_init.md)；
 [获取cookies与access_key](./API.Login.md)；
 [检查抽奖状态](./API.Room_entry_action.md)；
 [礼物赠送](./API.Bag_send.md)；

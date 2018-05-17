@@ -30,6 +30,7 @@
 [加入风暴](./API.storm_join.md)；
 
 [双倍硬币兑换](./API.coin.md)；
+[APP双倍硬币兑换](./API.App_silver2coin.md)；
 [获取硬币参数](./API.getStatus.md)；
 
 [加入实物奖励](./API.box_getStatus.md)；

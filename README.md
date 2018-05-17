@@ -18,13 +18,14 @@
 [用户信息](./API.getUserInfo.md)；
 
 [总督亲密度领取](./API.Search.md)；
-[活动PC抽奖](./API.Raffle.md)；
-[加入PC抽奖](./API.Raffle_join.md)；
-[加入APP抽奖](./API.YunYing.md)；
 [日常包裹](./API.receive_daily_bag.md)；
+[硬币验证码获取](./API.sliver.md)；
+
+[活动PC检测抽奖](./API.Raffle.md)；
+[活动加入PC抽奖](./API.Raffle_join.md)；
+[活动加入APP抽奖](./API.YunYing.md)；
 [小电视（摩天大楼）检测](./API.smalltv.md)；
 [小电视（摩天大楼）加入](./API.smalltv_join.md)；
-[硬币验证码获取](./API.sliver.md)；
 
 [热门房间](./API.liveList.md)；
 [检测风暴](./API.storm.md)；

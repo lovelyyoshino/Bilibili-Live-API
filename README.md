@@ -21,8 +21,8 @@
 [加入PC抽奖](./API.Raffle_join.md)；
 [加入APP抽奖](./API.YunYing.md)；
 [日常包裹](./API.receive_daily_bag.md)；
-[小电视](./API.smalltv.md)；
-[小电视加入](./API.smalltv_join.md)；
+[小电视（摩天大楼）检测](./API.smalltv.md)；
+[小电视（摩天大楼）加入](./API.smalltv_join.md)；
 [硬币验证码获取](./API.sliver.md)；
 
 [热门房间](./API.liveList.md)；

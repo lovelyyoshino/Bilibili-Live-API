@@ -37,6 +37,8 @@
 
 [加入实物奖励](./API.box_getStatus.md)；
 [批量关注主播](./API.attention.md)；
+[自动投币](./API.GiveCoin2toAv.md)；
+
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；
 [番剧](./API.bangumi.md)；

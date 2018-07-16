@@ -39,6 +39,9 @@
 [批量关注主播](./API.attention.md)；
 [自动投币](./API.GiveCoin2toAv.md)；
 
+[电视礼物结果](./API.TVResult.md)；
+[活动礼物结果](./API.RaffleResult.md)；
+
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；
 [番剧](./API.bangumi.md)；

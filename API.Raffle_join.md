@@ -2,7 +2,7 @@
 
 #### 调用地址
 
-http://api.live.bilibili.com/activity/v3/Raffle/join
+http://api.live.bilibili.com/activity/v1/Raffle/join
 
 需要 Cookies 并验证登录状态(Cookies)；要求应用申请弹幕权限
 

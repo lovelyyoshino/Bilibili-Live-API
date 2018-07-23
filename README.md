@@ -43,7 +43,9 @@
 [活动礼物结果](./API.RaffleResult.md)；
 
 [风纪委员案件识别](./API.caseObtain.md)；
-
+[识别案件情况](./API.juryCase.md)；
+[风纪委员案件识别](./API.caseObtain.md)；
+识别案件情况
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；
 [番剧](./API.bangumi.md)；

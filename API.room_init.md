@@ -13,4 +13,4 @@ https://api.live.bilibili.com/room/v1/Room/room_init
 |cookie|false|GET|string|发布帐号(必须和 Cookies 帐号一致)|
 |id|true|GET|string|房间id|
 
-#### 结果为"is_hidden":false,"is_locked":false,"is_portrait":false,"encrypted":false则不是钓鱼房间
+#### 结果为"is_hidden":false,"is_locked":false,"encrypted":false则不是钓鱼房间

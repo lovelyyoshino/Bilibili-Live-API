@@ -17,7 +17,4 @@ https://api.bilibili.com/x/credit/jury/juryCase
 |Referer|true|POST|string|https://www.bilibili.com/judgement/vote/{案件编号}|
 |User-Agent|true|false|string|Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36|
 |Accept-Language|false|POST|string|zh-CN,zh;q=0.9,en;q=0.8|
-
-####### tip：
-|----|----|--------|----|----|
 |判断信息  | 3 放弃| 2 否 | 4 删除 | 1 封杀|

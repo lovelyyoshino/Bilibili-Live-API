@@ -19,5 +19,6 @@ https://api.bilibili.com/x/credit/jury/juryCase
 |Accept-Language|false|POST|string|zh-CN,zh;q=0.9,en;q=0.8|
 
 tip：
+|字段|必选|传递方式|类型|说明|
 |----|----|--------|----|----|
 |判断信息  | 3 放弃| 2 否 | 4 删除 | 1 封杀|

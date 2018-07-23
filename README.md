@@ -42,7 +42,7 @@
 [电视礼物结果](./API.TVResult.md)；
 [活动礼物结果](./API.RaffleResult.md)；
 
-[活动礼物结果](./API.caseObtain.md)；
+[风纪委员案件识别](./API.caseObtain.md)；
 
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；

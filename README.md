@@ -42,6 +42,8 @@
 [电视礼物结果](./API.TVResult.md)；
 [活动礼物结果](./API.RaffleResult.md)；
 
+[活动礼物结果](./API.caseObtain.md)；
+
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；
 [番剧](./API.bangumi.md)；

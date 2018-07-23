@@ -9,7 +9,7 @@ https://api.bilibili.com/x/credit/jury/juryCase
 #### 参数
 
 |字段|必选|传递方式|类型|说明|
-|----|----|--------|----|----|
+|----|-----|--------|----|----|
 |cookies|true|POST|string|发布帐号(必须和 Cookies 帐号一致)|
 |jsonp|true|POST|string|jsonp|
 |cid|true|POST|string当前时间|

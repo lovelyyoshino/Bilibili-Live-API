@@ -44,7 +44,7 @@
 
 [风纪委员案件识别](./API.caseObtain.md)；
 [识别案件情况](./API.juryCase.md)；
-[风纪委员投票](./API.API.jury_vote.md)；
+[风纪委员投票](./API.jury_vote.md)；
 
 ### 直播 WebSocket
 

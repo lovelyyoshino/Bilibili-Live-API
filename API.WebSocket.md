@@ -45,10 +45,10 @@ Bilibili 直播弹幕 WebSocket 协议
 ```
 
 | 字段 | 必选 | 类型 | 说明|
-| --- | --- | --- | --- | --- |
-| clientver | false | string | 例如 `"1.5.10.1"` | --- |
-| platform | false | string | 例如 `"web"` | --- |
-| protover | false | number | 通常为 `1` | --- |
+| --- | --- | --- | --- |
+| clientver | false | string | 例如 `"1.5.10.1"` |
+| platform | false | string | 例如 `"web"` |
+| protover | false | number | 通常为 `1` |
 | roomid | true | number | 房间长 ID，可以通过 `room_init` API 获取 |
 | uid | false | number | uin，可以通过 `getUserInfo` API 获取 |
 
@@ -71,7 +71,7 @@ const ws = new WebSocket('wss://broadcastlv.chat.bilibili.com:2245/sub');
 ```javascript
 ws.on('open', function () {
   ws.send(encode(JSON.stringify({
-    roomid: 2029840
+    roomid: 23058
   }), 7));
 });
 ```

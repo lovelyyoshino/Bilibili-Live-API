@@ -4,6 +4,7 @@
 ### API 直播间
 
 ##### Tip:[检测B站api延迟](./Host.md)
+##### Tip：[新增爬取IP池，利用多代理请求绕过黑屋]（https://github.com/lovelyyoshino/IP_Pool）
 
 [心跳包](./API.heartbeat.md)；
 [检测小黑屋](./API.room_init.md)；

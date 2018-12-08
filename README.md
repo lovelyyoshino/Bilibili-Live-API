@@ -49,7 +49,7 @@
 
 ### 直播 WebSocket
 
-[WebSocket](./API.WebSocket.md)
+[弹幕WS协议](./API.WebSocket.md)
 
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；

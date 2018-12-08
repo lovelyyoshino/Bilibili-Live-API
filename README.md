@@ -3,8 +3,8 @@
 番剧相关api，并新增了bilibili直播相关API参数。（并希望大家能够提供API或者思路，毕竟总结有可能不全）
 ### API 直播间
 
-##### Tip:[检测B站api延迟](./Host.md)
-##### Tip：[新增爬取IP池，利用多代理请求绕过黑屋]（https://github.com/lovelyyoshino/IP_Pool）
+##### Tip:  [检测B站api延迟](./Host.md)
+##### Tip:  [新增爬取IP池，利用多代理请求绕过黑屋](https://github.com/lovelyyoshino/IP_Pool)
 
 [心跳包](./API.heartbeat.md)；
 [检测小黑屋](./API.room_init.md)；

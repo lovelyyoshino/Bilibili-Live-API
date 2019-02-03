@@ -28,11 +28,12 @@ ts |true|POST|string| 1549117192(时间戳)
 其实h5界面获取直播也很简单,少了很多的校验
 api也是上面那个,就是参数不一样
 
-    字段 | 说明
-    -- | --
-    cid:id |(直播id)
-    platform|h5
-    otype|json
-    quality|0
+字段 | 说明
+-- | --
+cookies|发布帐号(必须和 Cookies 帐号一致)
+cid:id |(直播id)
+platform|h5
+otype|json
+quality|0
     
 可以看到h5只需要提交一个id就可以了

@@ -27,6 +27,7 @@ ts |true|POST|string| 1549117192(时间戳)
 
 其实h5界面获取直播也很简单,少了很多的校验
 api也是上面那个,就是参数不一样
+    -- | --
     cid:id|(直播id)
     platform|h5
     otype|json

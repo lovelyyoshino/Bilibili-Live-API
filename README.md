@@ -50,6 +50,8 @@
 ### 直播 WebSocket
 
 [弹幕WS协议](./API.WebSocket.md)
+[播放记录获取](./API.RealRoom.md)
+
 
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；

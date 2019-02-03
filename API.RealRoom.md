@@ -22,6 +22,7 @@ platform |true|POST|string| android
 ptype |true|POST|string| 0
 quality |true|POST|string| 0
 ts |true|POST|string| 1549117192(时间戳)
+
 这是app里面直播源的获取方法
 
 其实h5界面获取直播也很简单,少了很多的校验

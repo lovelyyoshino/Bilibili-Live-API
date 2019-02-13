@@ -31,7 +31,7 @@ PC界面获取直播也很简单,少了很多的校验
 字段 |必选|传递方式|类型| 说明
 |----|----|--------|----|----|
 cookies|true|GET|string|发布帐号(必须和 Cookies 帐号一致)
-cid:id |true|GET|string|(直播id)
+cid |true|GET|string|(直播id)
 platform|true|GET|string|h5
 otype|true|GET|string|json
 quality|true|GET|int|0

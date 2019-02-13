@@ -4,14 +4,12 @@
 
 https://api.live.bilibili.com/room/v1/Room/playUrl
 
-需要 App Key ，并验证登录状态(Access key)
-
 #### 参数
 
 |字段|必选|传递方式|类型|说明|
 |----|----|--------|----|----|
-|access_key|true|GET|string|发布帐号(登录获得)|
-appkey |true|GET|string|iVGUTjsxvpLeuDCf(固定值)
+|access_key|false|GET|string|发布帐号(登录获得)|
+appkey |false|GET|string|秘钥
 build |true|GET|string|5370000
 channel |true|GET|string|bilibiil140
 cid |true|GET|string|544843(直播id)
@@ -25,12 +23,11 @@ ts |true|GET|string| 1549117192(时间戳)
 
 
 PC界面获取直播也很简单,少了很多的校验
-
-需要 Cookies 并验证登录状态(Cookies)
+#### 参数
 
 字段 |必选|传递方式|类型| 说明
 |----|----|--------|----|----|
-cookies|true|GET|string|发布帐号(必须和 Cookies 帐号一致)
+cookies|false|GET|string|发布帐号(必须和 Cookies 帐号一致)
 cid |true|GET|string|(直播id)
 platform|true|GET|string|h5
 otype|true|GET|string|json

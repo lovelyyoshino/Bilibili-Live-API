@@ -2,9 +2,9 @@
 
 #### 调用地址
 
-https://api.live.bilibili.com/room/v1/Room/playUrl?
+https://api.live.bilibili.com/room/v1/Room/playUrl
 
-需要 Cookies 并验证登录状态(Cookies)；要求应用申请弹幕权限
+需要 App Key ，并验证登录状态(Access key)
 
 #### 参数
 
@@ -23,10 +23,10 @@ ptype |true|GET|int| 0
 quality |true|GET|int| 0
 ts |true|GET|string| 1549117192(时间戳)
 
-这是app里面直播源的获取方法
 
-其实h5界面获取直播也很简单,少了很多的校验
-api也是上面那个,就是参数不一样
+PC界面获取直播也很简单,少了很多的校验
+
+需要 Cookies 并验证登录状态(Cookies)
 
 字段 |必选|传递方式|类型| 说明
 |----|----|--------|----|----|
@@ -35,5 +35,3 @@ cid:id |true|GET|string|(直播id)
 platform|true|GET|string|h5
 otype|true|GET|string|json
 quality|true|GET|int|0
-    
-tip：可以看到h5只需要提交一个id就可以了

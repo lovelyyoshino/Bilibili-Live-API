@@ -10,18 +10,18 @@ https://api.live.bilibili.com/room/v1/Room/playUrl?
 
 |字段|必选|传递方式|类型|说明|
 |----|----|--------|----|----|
-|access_key|true|POST|string|发布帐号(登录获得)|
-appkey |true|POST|string|iVGUTjsxvpLeuDCf(固定值)
-build |true|POST|string|5370000
-channel |true|POST|string|bilibiil140
-cid |true|POST|string|544843(直播id)
-device |true|POST|string|android
-https_url_req |true|POST|int|0
-mobi_app |true|POST|string| android
-platform |true|POST|string| android
-ptype |true|POST|int| 0
-quality |true|POST|int| 0
-ts |true|POST|string| 1549117192(时间戳)
+|access_key|true|GET|string|发布帐号(登录获得)|
+appkey |true|GET|string|iVGUTjsxvpLeuDCf(固定值)
+build |true|GET|string|5370000
+channel |true|GET|string|bilibiil140
+cid |true|GET|string|544843(直播id)
+device |true|GET|string|android
+https_url_req |true|GET|int|0
+mobi_app |true|GET|string| android
+platform |true|GET|string| android
+ptype |true|GET|int| 0
+quality |true|GET|int| 0
+ts |true|GET|string| 1549117192(时间戳)
 
 这是app里面直播源的获取方法
 
@@ -30,10 +30,10 @@ api也是上面那个,就是参数不一样
 
 字段 |必选|传递方式|类型| 说明
 |----|----|--------|----|----|
-cookies|true|POST|string|发布帐号(必须和 Cookies 帐号一致)
-cid:id |true|POST|string|(直播id)
-platform|true|POST|string|h5
-otype|true|POST|string|json
-quality|true|POST|int|0
+cookies|true|GET|string|发布帐号(必须和 Cookies 帐号一致)
+cid:id |true|GET|string|(直播id)
+platform|true|GET|string|h5
+otype|true|GET|string|json
+quality|true|GET|int|0
     
 tip：可以看到h5只需要提交一个id就可以了

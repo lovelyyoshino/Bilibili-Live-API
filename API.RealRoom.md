@@ -16,11 +16,11 @@ build |true|POST|string|5370000
 channel |true|POST|string|bilibiil140
 cid |true|POST|string|544843(直播id)
 device |true|POST|string|android
-https_url_req |true|POST|string|0
+https_url_req |true|POST|int|0
 mobi_app |true|POST|string| android
 platform |true|POST|string| android
-ptype |true|POST|string| 0
-quality |true|POST|string| 0
+ptype |true|POST|int| 0
+quality |true|POST|int| 0
 ts |true|POST|string| 1549117192(时间戳)
 
 这是app里面直播源的获取方法
@@ -28,12 +28,12 @@ ts |true|POST|string| 1549117192(时间戳)
 其实h5界面获取直播也很简单,少了很多的校验
 api也是上面那个,就是参数不一样
 
-字段 | 说明
--- | --
-cookies|发布帐号(必须和 Cookies 帐号一致)
-cid:id |(直播id)
-platform|h5
-otype|json
-quality|0
+字段 |必选|传递方式|类型| 说明
+|----|----|--------|----|----|
+cookies|true|POST|string|发布帐号(必须和 Cookies 帐号一致)
+cid:id |true|POST|string|(直播id)
+platform|true|POST|string|h5
+otype|true|POST|string|json
+quality|true|POST|int|0
     
-可以看到h5只需要提交一个id就可以了
+tip：可以看到h5只需要提交一个id就可以了

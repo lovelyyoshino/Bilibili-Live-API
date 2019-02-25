@@ -52,7 +52,8 @@
 [主播信息](./API.Room_master.md)；
 [舰队榜](./API.topList.md)；
 [友爱榜](./API.UnionFans.md)；
-[舰队榜](./API.topList.md)；
+[粉丝榜](./API.webMedalRank.md)；
+[粉丝榜](./API.webMedalRank.md)；
 
 ### 直播其他操作，包含 WebSocket协议
 

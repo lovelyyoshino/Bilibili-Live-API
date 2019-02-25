@@ -53,7 +53,7 @@
 [舰队榜](./API.topList.md)；
 [友爱榜](./API.UnionFans.md)；
 [粉丝榜](./API.webMedalRank.md)；
-[粉丝榜](./API.webMedalRank.md)；
+[房管](./API.roomAdmin.md)；
 
 ### 直播其他操作，包含 WebSocket协议
 

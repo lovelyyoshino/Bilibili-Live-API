@@ -9,5 +9,5 @@ https://api.live.bilibili.com/activity/v1/UnionFans/roomFansRank
 #### 请求参数
 |字段|必选|传递方式|类型|说明|
 |----|----|--------|----|----|
-| roomid      | true  |POST| int    | 直播房间id                                      |
-| ruid        | true  | POST|int    | up主uid                     |
+| roomid      | true  |POST| int    | 直播房间id    |
+| ruid        | true  | POST|int    | up主uid    |

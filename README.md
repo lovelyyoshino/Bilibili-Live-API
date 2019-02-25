@@ -50,6 +50,8 @@
 
 [七日榜](./API.RoomRank.md)；
 [主播信息](./API.Room_master.md)
+[舰队榜](./API.topList.md)
+
 
 ### 直播其他操作，包含 WebSocket协议
 

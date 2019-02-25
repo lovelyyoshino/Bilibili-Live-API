@@ -4,8 +4,8 @@
 
 https://api.live.bilibili.com/room/v1/Room/get_info
 
+需要 Cookies 并验证登录状态(Cookies)；要求应用申请弹幕权限
 
-### 请求方法 ：get
 
 #### 参数
 | 字段       | 必选    | 类型     | 说明  |

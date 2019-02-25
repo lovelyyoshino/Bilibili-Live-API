@@ -9,5 +9,5 @@ https://api.live.bilibili.com/rankdb/v1/RoomRank/webSevenRank?
 #### 请求参数
 | 字段       | 必选    |传递方式| 类型     | 说明                                       |
 | -------- | ----- | ------|--------| ---------------------------------------- |
-| roomid      | true  | int    |GET| 直播房间id                                      |
-| ruid        | true  | int    |GET| up主uid                                     |
+| roomid      | true  |GET| int    | 直播房间id                                      |
+| ruid        | true  | GET| int    |up主uid                                     |

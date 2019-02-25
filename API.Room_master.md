@@ -10,7 +10,7 @@ https://api.live.bilibili.com/room/v1/Room/get_info
 #### 参数
 | 字段       | 必选    |传递方式| 类型     | 说明  |
 | -------- | ----- |--------| ------ | ------------- |
-| id      | true  | int    |POST| 直播房间id   |
+| id      | true  |POST| int    | 直播房间id   |
 
 
 

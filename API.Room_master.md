@@ -13,6 +13,9 @@ https://api.live.bilibili.com/room/v1/Room/get_info
 | id      | true  | int    |POST| 直播房间id   |
 
 
+
+###### 返回
+
 | 返回值字段       | 字段类型   | 字段说明    |
 | ----------- | ------ | ----------------- |
 | uid         | int    | 主播uid      |

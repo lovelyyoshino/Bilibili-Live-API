@@ -47,12 +47,16 @@
 [识别案件情况](./API.juryCase.md)；
 [风纪委员投票](./API.jury_vote.md)；
 
+
+[七日榜](./API.RoomRank.md)；
+[主播信息](./API.Room_master.md)
+
 ### 直播其他操作，包含 WebSocket协议
 
 [弹幕WS协议](./API.WebSocket.md)
 [播放记录获取](./API.RealRoom.md)
 [历史记录](./API.History.md)
-[主播信息](./API.Room_master.md)
+
 
 
 

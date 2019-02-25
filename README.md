@@ -52,6 +52,8 @@
 [弹幕WS协议](./API.WebSocket.md)
 [播放记录获取](./API.RealRoom.md)
 [历史记录](./API.History.md)
+[主播信息](./API.Room_master.md)
+
 
 
 ### API 番剧

@@ -8,7 +8,7 @@
 
 [心跳包](./API.heartbeat.md)；
 [检测小黑屋](./API.room_init.md)；
-[获取cookies与access_key](./API.Login.md)；
+[获取cookies与access_key](./API.oauth.Login.md)；
 [检查抽奖状态](./API.Room_entry_action.md)；
 [礼物赠送](./API.Bag_send.md)；
 [佩戴勋章](./API.WearFansMedal.md)；
@@ -18,7 +18,7 @@
 [获取应援团信息](./API.Link_group.md)；
 [用户信息](./API.getUserInfo.md)；
 
-[总督亲密度领取](./API.Search.md)；
+[总督亲密度领取](./API.live.Search.md)；
 [日常包裹](./API.receive_daily_bag.md)；
 [硬币验证码获取](./API.sliver.md)；
 
@@ -59,7 +59,7 @@
 
 [弹幕WS协议](./API.WebSocket.md)
 [播放记录获取](./API.RealRoom.md)
-[历史记录](./API.History.md)
+[历史记录](./API.app.History.md)
 
 
 

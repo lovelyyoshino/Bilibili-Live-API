@@ -5,7 +5,7 @@ Bilibili 直播弹幕 WebSocket 协议
 ### 调用地址
 
 * 普通未加密的 WebSocket 连接： `ws://broadcastlv.chat.bilibili.com:2244/sub`
-* 使用 SSL 的 WebSocket 连接： `wss://broadcastlv.chat.bilibili.com:2245/sub`
+* 使用 SSL 的 WebSocket 连接： `wss://broadcastlv.chat.bilibili.com/sub`
 
 ### 数据包格式
 

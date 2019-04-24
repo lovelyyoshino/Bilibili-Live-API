@@ -5,7 +5,7 @@ Bilibili 直播弹幕 WebSocket 协议
 ### 调用地址
 
 * 普通未加密的 WebSocket 连接： `ws://broadcastlv.chat.bilibili.com:2244/sub`
-* 使用 SSL 的 WebSocket 连接： `wss://broadcastlv.chat.bilibili.com:2245/sub`
+* 使用 SSL 的 WebSocket 连接： `wss://broadcastlv.chat.bilibili.com/sub`
 
 ### 数据包格式
 
@@ -15,12 +15,20 @@ Bilibili 直播弹幕 WebSocket 协议
 | --- | --- | --- | --- | --- | --- |
 | 0 | 4 | int | Big Endian | Packet Length | 数据包长度 |
 | 4 | 2 | int | Big Endian | Header Length | 数据包头部长度（固定为 `16`） |
-| 6 | 2 | int | Big Endian | Protocol Version | 协议版本（固定为 `1`） |
+| 6 | 2 | int | Big Endian | Protocol Version | 协议版本（见下文） |
 | 8 | 4 | int | Big Endian | Operation | 操作类型（见下文） |
 | 12 | 4 | int | Big Endian | Sequence Id | 数据包头部长度（固定为 `1`） |
 | 16 | - | byte[] | - | Body | 数据内容 |
 
 同一个 `WebSocket Frame` 可能包含多个 `Bilibili 直播数据包`，每个 `Bilibili 直播数据包` 直接首尾相连，数据包长度只表示 `Bilibili 直播数据包` 的长度，并非 `WebSocket Frame` 的长度。
+
+#### 协议版本
+
+| 值 | Body 格式 | 说明 |
+| --- | --- | --- |
+| 0 | JSON | JSON纯文本，可以直接通过 `JSON.stringify` 解析 |
+| 1 | Int 32 Big Endian | Body 内容为房间人气值 |
+| 2 | Buffer | 压缩过的 Buffer，Body 内容需要用zlib.inflate解压出一个新的数据包，然后从数据包格式那一步重新操作一遍 |
 
 #### 操作类型
 
@@ -36,11 +44,12 @@ Bilibili 直播弹幕 WebSocket 协议
 
 ```json
 {
-  "clientver": "1.5.10.1",
+  "clientver": "1.6.3",
   "platform": "web",
-  "protover": 1,
+  "protover": 2,
   "roomid": 23058,
   "uid": 0,
+  "type": 2
 }
 ```
 
@@ -48,9 +57,10 @@ Bilibili 直播弹幕 WebSocket 协议
 | --- | --- | --- | --- |
 | clientver | false | string | 例如 `"1.5.10.1"` |
 | platform | false | string | 例如 `"web"` |
-| protover | false | number | 通常为 `1` |
+| protover | false | number | 通常为 `2` |
 | roomid | true | number | 房间长 ID，可以通过 `room_init` API 获取 |
 | uid | false | number | uin，可以通过 `getUserInfo` API 获取 |
+| type | false | number | 不知道啥，总之写 `2` |
 
 #### 心跳回应
 

@@ -70,20 +70,81 @@ Bilibili 直播弹幕 WebSocket 协议
 
 这里以浏览器 JavaScript 自带的 `WebSocket` 说明
 
-1. 连接 WebSocket
+1. 声明encode和decode方法
+```javascript
+const textEncoder = new TextEncoder('utf-8');
+const textDecoder = new TextDecoder('utf-8');
+
+const readInt = function(buffer,start,len){
+  let result = 0
+  for(let i=len - 1;i >= 0;i--){
+    result += Math.pow(256,len - i - 1) * buffer[start + i]
+  }
+  return result
+}
+
+const writeInt = function(buffer,start,len,value){
+  let i=0
+  while(i<len){
+    buffer[start + i] = value/Math.pow(256,len - i - 1)
+    i++
+  }
+}
+
+const encode = function(str,op){
+  let data = textEncoder.encode(str);
+  let packetLen = 16 + data.byteLength;
+  let header = [0,0,0,0,0,16,0,1,0,0,0,op,0,0,0,1]
+  writeInt(header,0,4,packetLen)
+  return (new Uint8Array(header.concat(...data))).buffer
+}
+const decode = function(blob){
+  return new Promise(function(resolve, reject) {
+    let reader = new FileReader();
+    reader.onload = function (e){
+      let buffer = new Uint8Array(e.target.result)
+      let result = {}
+      result.packetLen = readInt(buffer,0,4)
+      result.headerLen = readInt(buffer,4,2)
+      result.ver = readInt(buffer,6,2)
+      result.op = readInt(buffer,8,4)
+      result.seq = readInt(buffer,12,4)
+      if(result.op === 5){
+        result.body = []
+        let offset = 0;
+        while(offset < buffer.length){
+          let packetLen = readInt(buffer,offset + 0,4)
+          let headerLen = 16// readInt(buffer,offset + 4,4)
+          let data = buffer.slice(offset + headerLen, offset + packetLen);
+          let body = textDecoder.decode(data);
+          if(body){
+            result.body.push(JSON.parse(body));
+          }
+          offset += packetLen;
+        }
+      }else if(result.op === 3){
+        result.body = {
+          count: readInt(buffer,16,4)
+        };
+      }
+      resolve(result)
+    }
+    reader.readAsArrayBuffer(blob);
+  });
+}
+```
+
+
+2. 连接 WebSocket并发送进入房间请求
 
 ```javascript
 const ws = new WebSocket('wss://broadcastlv.chat.bilibili.com:2245/sub');
-```
-
-2. 连接成功后发送进入房间请求
-
-```javascript
-ws.on('open', function () {
+ws.onopen = function () {
   ws.send(encode(JSON.stringify({
     roomid: 23058
   }), 7));
-});
+};
+// 如果使用的是控制台，这两句一定要一起执行，否侧onopen不会被触发
 ```
 
 这个数据包必须为连接以后的第一个数据包，5 秒内不发送进房数据包，服务器主动断开连接，任何数据格式错误将直接导致服务器主动断开连接。
@@ -99,20 +160,18 @@ setInterval(function () {
 4. 接收
 
 ```javascript
-ws.on('message', function (data) {
-  const packets = decode(data);
-  for (let i = 0; i < packets.length; ++i) {
-    const packet = packets[i];
-    switch (packet.op) {
-      case 8:
-        console.log('加入房间');
-        break;
-      case 3:
-        const count = decodeInt(packet.data);
-        console.log(`人气：${count}`);
-        break;
-      case 5:
-        const body = decodeJson(packet.data);
+ws.onmessage = async function (msgEvent) {
+  const packet = await decode(msgEvent.data);
+  switch (packet.op) {
+    case 8:
+      console.log('加入房间');
+      break;
+    case 3:
+      const count = packet.body.count
+      console.log(`人气：${count}`);
+      break;
+    case 5:
+      packet.body.forEach((body)=>{
         switch (body.cmd) {
           case 'DANMU_MSG':
             console.log(`${body.info[2][1]}: ${body.info[1]}`);
@@ -127,10 +186,10 @@ ws.on('message', function (data) {
           default:
             console.log(body);
         }
-        break;
-      default:
-        console.log(packet);
-    }
+      })
+      break;
+    default:
+      console.log(packet);
   }
-});
+};
 ```

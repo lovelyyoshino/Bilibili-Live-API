@@ -57,10 +57,12 @@ Bilibili 直播弹幕 WebSocket 协议
 | --- | --- | --- | --- |
 | clientver | false | string | 例如 `"1.5.10.1"` |
 | platform | false | string | 例如 `"web"` |
-| protover | false | number | 通常为 `2` |
+| protover | false | number | `1` 或者 `2` |
 | roomid | true | number | 房间长 ID，可以通过 `room_init` API 获取 |
 | uid | false | number | uin，可以通过 `getUserInfo` API 获取 |
 | type | false | number | 不知道啥，总之写 `2` |
+
+* protover 为 `1` 时不会使用zlib压缩，为 `2` 时会发送带有zlib压缩的包，也就是数据包协议为 `2` 。
 
 #### 心跳回应
 

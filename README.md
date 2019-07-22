@@ -17,6 +17,7 @@
 [APP端应援团签到](./API.Link_setting.md)；
 [获取应援团信息](./API.Link_group.md)；
 [用户信息](./API.getUserInfo.md)；
+[直接查用户信息](./API.UserInfo.md)
 
 [总督亲密度领取](./API.live.Search.md)；
 [日常包裹](./API.receive_daily_bag.md)；

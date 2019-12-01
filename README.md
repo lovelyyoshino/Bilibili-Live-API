@@ -19,17 +19,18 @@
 [用户信息](./API.getUserInfo.md)；
 [直接查用户信息](./API.UserInfo.md)
 
-[总督亲密度领取](./API.live.Search.md)；
+[总督亲密度领取(已失效)](./API.live.Search.md)；
 [日常包裹](./API.receive_daily_bag.md)；
 [硬币验证码获取](./API.sliver.md)；
 
 [活动PC检测抽奖（已失效）](./API.Raffle.md)；
 [活动加入PC抽奖（已失效）](./API.Raffle_join.md)；
 [活动加入APP抽奖（已失效）](./API.YunYing.md)；
-[小电视（摩天大楼，C位）检测](./API.smalltv.md)；
-[小电视（摩天大楼，C位）加入](./API.smalltv_join.md)；
+[小电视（舰长/pk/大楼）检测](./API.smalltv.md)；
+[小电视（舰长/pk/大楼）加入](./API.smalltv_join.md)；
 
 [热门房间](./API.liveList.md)；
+[直播列表](./API.getRoomList.md);
 [检测风暴](./API.storm.md)；
 [加入风暴](./API.storm_join.md)；
 
@@ -55,6 +56,7 @@
 [友爱榜](./API.UnionFans.md)；
 [粉丝榜](./API.webMedalRank.md)；
 [房管](./API.roomAdmin.md)；
+
 
 ### 直播其他操作，包含 WebSocket协议
 

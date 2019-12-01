@@ -2,7 +2,7 @@
 
 #### 调用地址
 
-https://api.live.bilibili.com/gift/v3/smalltv/check
+https://api.live.bilibili.com/xlive/lottery-interface/v1/lottery/Check
 
 需要 Cookies，并验证登录状态(Cookies)
 

@@ -70,6 +70,7 @@
 ### API 番剧
 [作者推荐](./API.author_recommend.md)；
 [番剧](./API.bangumi.md)；
+[每周番剧](./API.bangumi.week.md)
 [弹幕](./API.comment.md)；
 [动态](./API.dynamic.md)；
 

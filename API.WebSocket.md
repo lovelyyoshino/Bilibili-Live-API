@@ -195,3 +195,55 @@ ws.onmessage = async function (msgEvent) {
   }
 };
 ```
+
+5.PS
+
+有时候弹幕消息主体经过压缩，导致不能解析，nodejs中，decode方法改写如下：
+
+```javascript
+const zlib = require('zlib');
+
+const decoder = function (blob) {
+  let buffer = new Uint8Array(blob)
+  let result = {}
+  result.packetLen = readInt(buffer, 0, 4)
+  result.headerLen = readInt(buffer, 4, 2)
+  result.ver = readInt(buffer, 6, 2)
+  result.op = readInt(buffer, 8, 4)
+  result.seq = readInt(buffer, 12, 4)
+  if (result.op === 5) {
+    result.body = []
+    let offset = 0;
+    while (offset < buffer.length) {
+      let packetLen = readInt(buffer, offset + 0, 4)
+      let headerLen = 16// readInt(buffer,offset + 4,4)
+      if (result.ver == 2) {
+        let data = buffer.slice(offset + headerLen, offset + packetLen);
+        let newBuffer = zlib.inflateSync(new Uint8Array(data));
+        const obj = decoder(newBuffer);
+        const body = obj.body;
+        result.body = result.body.concat(body);
+      } else {
+        let data = buffer.slice(offset + headerLen, offset + packetLen);
+        let body = textDecoder.decode(data);
+        if (body) {
+          result.body.push(JSON.parse(body));
+        }
+      }
+      offset += packetLen;
+    }
+  } else if (result.op === 3) {
+    result.body = {
+      count: readInt(buffer, 16, 4)
+    };
+  }
+  return result;
+}
+
+const decode = function (blob) {
+  return new Promise(function (resolve, reject) {
+    const result = decoder(blob);
+    resolve(result)
+  });
+}
+```

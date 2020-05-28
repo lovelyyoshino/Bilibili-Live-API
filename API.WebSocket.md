@@ -136,7 +136,6 @@ const decode = function(blob){
 }
 ```
 
-
 2. 连接 WebSocket并发送进入房间请求
 
 ```javascript
@@ -198,8 +197,55 @@ ws.onmessage = async function (msgEvent) {
 
 5.PS
 
-有时候弹幕消息主体经过压缩，导致不能解析，nodejs中，decode方法改写如下：
+有时候弹幕消息主体经过压缩，导致不能解析
 
+浏览器中，decode方法改写如下：
+```javascript
+const decode = function(blob){
+  return new Promise(function(resolve, reject) {
+    let reader = new FileReader();
+    reader.onload = function (e){
+      let buffer = new Uint8Array(e.target.result)
+      let result = {}
+      result.packetLen = readInt(buffer,0,4)
+      result.headerLen = readInt(buffer,4,2)
+      result.ver = readInt(buffer,6,2)
+      result.op = readInt(buffer,8,4)
+      result.seq = readInt(buffer,12,4)
+      if(result.op === 5){
+        result.body = []
+        let offset = 0;
+        while(offset < buffer.length){
+          let packetLen = readInt(buffer,offset + 0,4)
+          let headerLen = 16// readInt(buffer,offset + 4,4)
+          let data = buffer.slice(offset + headerLen, offset + packetLen);
+
+          /**
+           * 仅有两处更改
+           * 1. 引入pako做message解压处理，具体代码链接如下
+           *    https://github.com/nodeca/pako/blob/master/dist/pako.js
+           * 2. message文本中截断掉不需要的部分，避免JSON.parse时出现问题
+           */
+          let body = textDecoder.decode(pako.inflate(data));
+          if (body) {
+              result.body.push(JSON.parse(body.slice(body.indexOf("{"))));
+          }
+
+          offset += packetLen;
+        }
+      }else if(result.op === 3){
+        result.body = {
+          count: readInt(buffer,16,4)
+        };
+      }
+      resolve(result)
+    }
+    reader.readAsArrayBuffer(blob);
+  });
+}
+```
+
+nodejs中，decode方法改写如下：
 ```javascript
 const zlib = require('zlib');
 

@@ -63,6 +63,46 @@ Bilibili 直播弹幕 WebSocket 协议
 | type | false | number | 不知道啥，总之写 `2` |
 
 * protover 为 `1` 时不会使用zlib压缩，为 `2` 时会发送带有zlib压缩的包，也就是数据包协议为 `2` 。
+#### 消息类型
+1.弹幕类
+| 字段 | 说明 |
+| --- | --- |
+| DANMU_MSG | 弹幕消息 |
+| WELCOME_GUARD | 欢迎xxx老爷 |
+| ENTRY_EFFECT | 欢迎舰长进入房间 |
+| WELCOME |欢迎xxx进入房间 |
+|SUPER_CHAT_MESSAGE_JPN | 
+|SUPER_CHAT_MESSAGE |二个都是SC留言 |
+
+2.礼物类
+| 字段 | 说明 |
+| --- | --- |
+| SEND_GIFT | 投喂礼物 |
+| COMBO_SEND | 连击礼物 |
+
+
+3.天选之人类
+| 字段 | 说明 |
+| --- | --- |
+| ANCHOR_LOT_START | 天选之人开始完整信息 |
+| ANCHOR_LOT_END | 天选之人获奖id |
+| ANCHOR_LOT_AWARD| 天选之人获奖完整信息 |
+
+
+4.上船类
+| 字段 | 说明 |
+| --- | --- |
+| GUARD_BUY   |上舰长
+| USER_TOAST_MSG | 续费了舰长
+| NOTICE_MSG | 在本房间续费了舰长
+5.分区排行类
+| 字段 | 说明 |
+| --- | --- |
+ACTIVITY_BANNER_UPDATE_V2 |小时榜变动
+6.关注数变化类
+| 字段 | 说明 |
+| --- | --- |
+ROOM_REAL_TIME_MESSAGE_UPDATE |粉丝关注变动
 
 #### 心跳回应
 
@@ -276,6 +316,10 @@ const decoder = function (blob) {
           result.body.push(JSON.parse(body));
         }
       }
+      let body = textDecoder.decode(pako.inflate(data));
+          if (body) {
+              result.body.push(JSON.parse(body.slice(body.indexOf("{"))));
+          }
       offset += packetLen;
     }
   } else if (result.op === 3) {

@@ -20,7 +20,9 @@ Bilibili 直播弹幕 WebSocket 协议
 | 12 | 4 | int | Big Endian | Sequence Id | 数据包头部长度（固定为 `1`） |
 | 16 | - | byte[] | - | Body | 数据内容 |
 
-同一个 `WebSocket Frame` 可能包含多个 `Bilibili 直播数据包`，每个 `Bilibili 直播数据包` 直接首尾相连，数据包长度只表示 `Bilibili 直播数据包` 的长度，并非 `WebSocket Frame` 的长度。
+~~同一个 `WebSocket Frame` 可能包含多个 `Bilibili 直播数据包`，每个 `Bilibili 直播数据包` 直接首尾相连，数据包长度只表示 `Bilibili 直播数据包` 的长度，并非 `WebSocket Frame` 的长度。~~
+
+2020.6.4 现版本弹幕协议中数据包长度就是整个`WebSocket Frame`的长度，而并非`直播数据包`长度，因此已无法通过offset来切割相邻的`直播数据包`。获得数据后也不能直接使用JSON.parse进行解析，需要将多条json数据切割。
 
 #### 协议版本
 

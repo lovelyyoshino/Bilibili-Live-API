@@ -1,6 +1,7 @@
 # Bilibili API 直播，番剧文档
 本文clone了[fython大佬](https://github.com/fython/BilibiliAPIDocs)
 番剧相关api，并新增了bilibili直播相关API参数。（并希望大家能够提供API或者思路，毕竟总结有可能不全）
+提供一个便捷的python开发库：[链接](https://pypi.org/project/bilibili-api/)
 ### 直播 API
 
 ##### Tip:  [检测B站api延迟](./Host.md)

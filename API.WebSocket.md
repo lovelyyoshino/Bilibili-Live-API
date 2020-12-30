@@ -270,7 +270,16 @@ const decode = function(blob){
            */
           let body = textDecoder.decode(pako.inflate(data));
           if (body) {
-              result.body.push(JSON.parse(body.slice(body.indexOf("{"))));
+              // 同一条 message 中可能存在多条信息，用正则筛出来
+              const group = body.split(/[\u0000]*(?:[\u0000]|$)*/);
+              group.forEach(item => {
+                try {
+                  result.body.push(JSON.parse(item));
+                }
+                catch(e) {
+                  // 忽略非 JSON 字符串，通常情况下为分隔符
+                }
+              });
           }
 
           offset += packetLen;

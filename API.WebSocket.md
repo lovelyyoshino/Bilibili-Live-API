@@ -271,7 +271,7 @@ const decode = function(blob){
           let body = textDecoder.decode(pako.inflate(data));
           if (body) {
               // 同一条 message 中可能存在多条信息，用正则筛出来
-              const group = body.split(/[\u0000]*(?:[\u0000]|$)*/);
+              const group = body.split(/[\x00-\x1f]+/);
               group.forEach(item => {
                 try {
                   result.body.push(JSON.parse(item));

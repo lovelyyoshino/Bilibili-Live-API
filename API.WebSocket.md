@@ -268,13 +268,45 @@ const decode = function(blob){
            *    https://github.com/nodeca/pako/blob/master/dist/pako.js
            * 2. message文本中截断掉不需要的部分，避免JSON.parse时出现问题
            */
-          let body = textDecoder.decode(pako.inflate(data));
+          /** let body = textDecoder.decode(pako.inflate(data));
           if (body) {
               // 同一条 message 中可能存在多条信息，用正则筛出来
               const group = body.split(/[\x00-\x1f]+/);
               group.forEach(item => {
                 try {
                   result.body.push(JSON.parse(item));
+                }
+                catch(e) {
+                  // 忽略非 JSON 字符串，通常情况下为分隔符
+                }
+              });
+          }**/
+          
+          let body = '';
+          try {
+              // pako可能无法解压
+              body = textDecoder.decode(pako.inflate(data));
+          }
+          catch (e){
+             body = textDecoder.decode(data)
+          }
+
+          if (body) {
+              // 同一条 message 中可能存在多条信息，用正则筛出来
+              const group = body.split(/[\x00-\x1f]+/);
+              group.forEach(item => {
+                try {
+                  const parsedItem = JSON.parse(item);
+                  if (typeof parsedItem === 'object') {
+                      result.body.push(parsedItem);
+                  } else {
+                      // 这里item可能会解析出number
+                      // 此时可以尝试重新用pako解压data（携带转换参数）
+                      // const newBody = textDecoder.decode(pako.inflate(data, {to: 'String'}))
+                      // 重复上面的逻辑，筛选可能存在的多条信息
+                      // 初步验证，这里可以解析到INTERACT_WORD、DANMU_MSG、ONLINE_RANK_COUNT
+                      // SEND_GIFT、SUPER_CHAT_MESSAGE
+                  }
                 }
                 catch(e) {
                   // 忽略非 JSON 字符串，通常情况下为分隔符

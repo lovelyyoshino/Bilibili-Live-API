@@ -2,6 +2,11 @@
 
 Bilibili 直播弹幕 WebSocket 协议
 
+### tcp流调用图
+* tcp服务器为: `broadcastlv.chat.bilibili.com`
+
+![1](https://user-images.githubusercontent.com/14891398/125155165-98cc5400-e190-11eb-83ff-2e537a2dd7cd.png)
+
 ### 调用地址
 
 * 普通未加密的 WebSocket 连接： `ws://broadcastlv.chat.bilibili.com:2244/sub`

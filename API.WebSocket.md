@@ -7,6 +7,27 @@ Bilibili 直播弹幕 WebSocket 协议
 
 ![1](https://user-images.githubusercontent.com/14891398/125155165-98cc5400-e190-11eb-83ff-2e537a2dd7cd.png)
 
+当前关于ws重要信息
+```
+WS_OP_HEARTBEAT: 2, //心跳
+WS_OP_HEARTBEAT_REPLY: 3, //心跳回应 
+WS_OP_MESSAGE: 5, //弹幕,消息等
+WS_OP_USER_AUTHENTICATION: 7,//用户进入房间
+WS_OP_CONNECT_SUCCESS: 8, //进房回应
+WS_PACKAGE_HEADER_TOTAL_LENGTH: 16,//头部字节大小
+WS_PACKAGE_OFFSET: 0,
+WS_HEADER_OFFSET: 4,
+WS_VERSION_OFFSET: 6,
+WS_OPERATION_OFFSET: 8,
+WS_SEQUENCE_OFFSET: 12,
+WS_BODY_PROTOCOL_VERSION_NORMAL: 0,//普通消息
+WS_BODY_PROTOCOL_VERSION_BROTLI: 3,//brotli压缩信息
+WS_HEADER_DEFAULT_VERSION: 1,
+WS_HEADER_DEFAULT_OPERATION: 1,
+WS_HEADER_DEFAULT_SEQUENCE: 1,
+WS_AUTH_OK: 0,
+WS_AUTH_TOKEN_ERROR: -101
+```
 ### 调用地址
 
 * 普通未加密的 WebSocket 连接： `ws://broadcastlv.chat.bilibili.com:2244/sub`
@@ -29,6 +50,8 @@ Bilibili 直播弹幕 WebSocket 协议
 
 2020.6.4 现版本弹幕协议中数据包长度就是整个`WebSocket Frame`的长度，而并非`直播数据包`长度，因此已无法通过offset来切割相邻的`直播数据包`。获得数据后也不能直接使用JSON.parse进行解析，需要将多条json数据切割。
 
+2021.7.12 现版本协议增加brotli压缩信息
+
 #### 协议版本
 
 | 值 | Body 格式 | 说明 |
@@ -36,6 +59,7 @@ Bilibili 直播弹幕 WebSocket 协议
 | 0 | JSON | JSON纯文本，可以直接通过 `JSON.stringify` 解析 |
 | 1 | Int 32 Big Endian | Body 内容为房间人气值 |
 | 2 | Buffer | 压缩过的 Buffer，Body 内容需要用zlib.inflate解压出一个新的数据包，然后从数据包格式那一步重新操作一遍 |
+| 3 | Buffer | 压缩信息,需要brotli解压,然后从数据包格式 那一步重新操作一遍 |
 
 #### 操作类型
 
@@ -102,10 +126,12 @@ Bilibili 直播弹幕 WebSocket 协议
 | GUARD_BUY   |上舰长
 | USER_TOAST_MSG | 续费了舰长
 | NOTICE_MSG | 在本房间续费了舰长
+
 5.分区排行类
 | 字段 | 说明 |
 | --- | --- |
 ACTIVITY_BANNER_UPDATE_V2 |小时榜变动
+
 6.关注数变化类
 | 字段 | 说明 |
 | --- | --- |

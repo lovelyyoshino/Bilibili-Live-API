@@ -7,10 +7,16 @@
 ### 直播 API
 
 ##### Tip:  [检测B站api延迟](./Host.md)
-##### Tip:  [新增爬取IP池，利用多代理请求绕过黑屋](https://github.com/lovelyyoshino/IP_Pool)
+##### Tip:  [API 全量索引](./API.catalog.md)
+##### Tip:  [当前直播 API 验证状态](./LIVE_API_STATUS.md)
+##### Tip:  [当前直播 API 发现与验证](./API.live.current.md)
+##### Tip:  [WBI 签名说明](./API.WBI.md)
+##### Tip:  [鉴权与安全验证边界](./API.auth.md)
+##### Tip:  [旧版直播接口安全边界](./API.legacy.safety.md)
 
-[心跳包](./API.heartbeat.md)；
-[检测小黑屋](./API.room_init.md)；
+> 当前可直接复核的直播公开读接口以 `LIVE_API_STATUS.md`、`API.live.current.md` 和 `data/live-api-manifest.json` 为准。旧列表中需要 Cookie、`access_key`、CSRF、领取、加入、赠送、关注、投币、抽奖、登录或验证码的接口只作为历史资料保留，默认验证脚本不会调用，也不应当视为当前可用 API。
+
+[房间初始化/锁定状态](./API.room_init.md)；
 [获取cookies与access_key](./API.oauth.Login.md)；
 [检查抽奖状态](./API.Room_entry_action.md)；
 [礼物赠送](./API.Bag_send.md)；
@@ -64,6 +70,25 @@
 ### 直播其他操作，包含 WebSocket协议
 
 [弹幕WS协议](./API.WebSocket.md)
+[当前直播 API](./API.live.current.md)
+[新版批量房间基础信息](./API.getRoomBaseInfo.md)
+[新版直播间聚合信息](./API.getInfoByRoom.md)
+[新版网页播放信息](./API.getRoomPlayInfo.md)
+[弹幕服务器和 Token](./API.getDanmuInfo.md)
+[直播间历史弹幕](./API.live.danmu_history.md)
+[直播间礼物面板](./API.live.gift_panel.md)
+[直播间主播资料](./API.live.anchor_in_room.md)
+[直播间贡献榜/在线榜](./API.live.contribution_rank.md)
+[直播全屏特效配置](./API.live.effects.md)
+[直播间游戏卡片信息](./API.live.room_game_card_info.md)
+[直播间表情引导配置](./API.live.emoticon_guide.md)
+[直播间 WBI 页面模块](./API.live.page_modules.md)
+[直播资源与配置接口](./API.live.resources.md)
+[直播推荐接口](./API.live.recommendations.md)
+[直播首页与房间页面当前接口](./API.live.homepage.md)
+[直播电竞赛事数据接口](./API.live.esports.md)
+[新版首页直播推荐与排行](./API.webMain.getList.md)
+[新版直播分区列表](./API.getWebAreaList.md)
 [播放记录获取](./API.RealRoom.md)
 [历史记录](./API.app.History.md)
 
@@ -98,5 +123,5 @@
 [番剧专题](./API.spview.md)；
 [搜索关键词](./API.suggest.md)；
 [标签](./API.tags.md)；
-[用户信息](./API.userinfo.md)；
+[用户信息](./API.UserInfo.md)；
 [获取视频信息](./API.view.md).

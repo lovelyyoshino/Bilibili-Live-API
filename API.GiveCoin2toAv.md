@@ -1,5 +1,7 @@
 ## 自动投币实现
 
+> 安全边界：这是需要 Cookie/CSRF 的 POST 投币账号动作接口，会改变账号资产或视频状态；默认验证脚本不会调用，当前仓库只把它作为历史资料和风险分类样例保留。
+
 #### 调用地址
 
 https://api.bilibili.com/x/web-interface/coin/add
@@ -14,4 +16,4 @@ https://api.bilibili.com/x/web-interface/coin/add
 |aid|true|POST|string|赠送视频id|
 |multiply|true|POST|string|数目|
 |cross_domain|true|POST|string|true|
-|csrf_token|true|POST|string|与 cookie 中 bili_jct 值一致（fce9ff23db2a8da348172da7e8972020）|
+|csrf_token|true|POST|string|与 cookie 中 `bili_jct` 值一致（此处不记录真实值）|

@@ -1,5 +1,7 @@
 ## 礼物赠送
 
+> 安全边界：这是需要 Cookie/CSRF 的 POST 账号动作接口，会改变账号或礼物状态；默认验证脚本不会调用，当前仓库只把它作为历史资料和风险分类样例保留。
+
 #### 调用地址
 
 http://api.live.bilibili.com/gift/v2/live/bag_send
@@ -23,4 +25,4 @@ http://api.live.bilibili.com/gift/v2/live/bag_send
 |storm_beat_id|true|POST|string|连击数 默认 0 |
 |metadata|false|POST|string|空|
 |price|true|POST|string|默认为 0 ，免费的|
-|csrf_token|true|POST|string|与 cookie 中 bili_jct 值一致（fce9ff23db2a8da348172da7e8972020）|
+|csrf_token|true|POST|string|与 cookie 中 `bili_jct` 值一致（此处不记录真实值）|

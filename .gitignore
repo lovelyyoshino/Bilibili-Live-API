@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+
+# Local capture evidence and browser/test artifacts
+evidence/
+test-results/
+playwright-report/
+blob-report/
+playwright/.auth/
+.auth/
+trace/
+*.har
+*.trace.zip
+
+# Coverage, caches, and build output
+coverage/
+.nyc_output/
+.cache/
+.vite/
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local environment and OS/editor files
+.env
+.env.*
+.bilibili-cookies
+.bilibili-cookies.*
+bilibili-cookies*.txt
+bilibili-storage-state*.json
+storage-state*.json
+*.storage-state.json
+cookies.txt
+cookies*.txt
+cookies*.json
+*-cookies.json
+*.cookie
+*.cookies
+user-data-dir/
+chrome-profile/
+.DS_Store
+.idea/
+.vscode/
+
+# Claude Code / Codex temp files
+.cc-tmp/
+.claude/
+.omc/
+test
+scripts
+data
+.omc

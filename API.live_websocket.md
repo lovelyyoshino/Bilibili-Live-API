@@ -1,4 +1,4 @@
-# 直播 WebSocket 消息协议（2026-07-15 更新）
+# 直播 WebSocket 消息协议（2026-07-28 更新）
 
 > 来源：`SocialSisterYi/bilibili-API-collect` + 浏览器捕获验证。
 
@@ -248,10 +248,10 @@ message MedalInfo {
 }
 
 message BlindGift {          // 盲盒（心动盲盒等）爆出信息
-  uint32 gift_action   = 1;  // ? 状态码（实测 139）
-  uint32 original_gift_id   = 2;  // 盲盒原始礼物 id
-  string original_gift_name = 3;  // 盲盒名（如"心动盲盒"）
-  string action        = 5;  // 动作文案（"爆出"）
+  uint32 bind_gift_config_id = 1;  // ? 状态码（实测 139）
+  uint32 original_gift_id    = 2;  // 盲盒原始礼物 id
+  string original_gift_name  = 3;  // 盲盒名（如"心动盲盒"）
+  string gift_action   = 5;  // 动作文案（"爆出"）
   uint32 blind_price   = 6;  // 盲盒本身价格（瓜子），一次性送多个盲盒时仅显示该盲盒一个的原价
 }
 
@@ -261,15 +261,15 @@ message GiftData {
   uint32 num         = 3;   // 数量
   uint32 gift_type   = 4;   // ? 礼物类型
   uint32 price       = 5;   // 单价（瓜子）
-  uint32 total_coin  = 6;   // 普通礼物实付总价 = price × num，盲盒场景下为爆出礼物的总价（非盲盒原价）
-  uint32 discount_price = 7;// 盲盒场景下的盲盒原价
+  uint32 discount_price = 6;  // 普通礼物实际单价，盲盒场景下为爆出礼物的单价
+  uint32 total_coin  = 7;   // 普通礼物实付总价，盲盒场景下的盲盒原本价格的总价
   string coin_type   = 8;   // gold=金瓜子 silver=银瓜子
   string tid         = 9;   // 交易流水号（字符串大数）
   uint64 timestamp   = 10;  // 送礼时间戳（秒）
   uint32 super       = 11;  // ? 特效/礼物标记
   string rnd         = 12;  // 批次/去重 uuid
   uint32 field13     = 13;  // ?（实测 10）
-  uint32 field14     = 14;  // ? 总价重复（实测 16000）
+  uint32 combo_total_coin = 14;  // ? 总价重复（实测 16000），推测为礼物连击事件额外的total_coin字段
   uint32 field15     = 15;  // ?（实测 5）
   float  gift_ratio  = 16;  // ? 礼物比率（fixed32 浮点，实测 1.0）
   uint32 field17     = 17;  // ?
@@ -297,10 +297,10 @@ message UserInfo {           // 完整用户信息（base + medal）
 ```
 
 **关键落地建议**：
-- `SEND_GIFT_V2` 与 `SEND_GIFT` 语义等价（除`total_coin`），映射关系：pb `uid/uname/face` ↔ 旧版 `uid/uname/face`；`gift.gift_id/gift_name/num/price/total_coin/coin_type/action` ↔ 旧版同名字段；`medal` ↔ `medal_info`；`blind` ↔ `blind_gift`；`sender` ↔ `sender_uinfo`。
+- `SEND_GIFT_V2` 与 `SEND_GIFT` 语义等价，映射关系：pb `uid/uname/face` ↔ 旧版 `uid/uname/face`；`gift.gift_id/gift_name/num/price/total_coin/coin_type/action` ↔ 旧版同名字段；`medal` ↔ `medal_info`；`blind` ↔ `blind_gift`；`sender` ↔ `sender_uinfo`。
 - 颜色字段在 pb `MedalInfo` 中为十进制整数，在 `UserInfo.medal` 中为 `#RRGGBBAA` 十六进制串（如 `#3FB4F699`），两处表示不同，勿混用。
 - `?` 字段含义未确认，切勿硬编码依赖；`total_coin`（#6）为实付金额，是计费/统计的权威字段。
-- 盲盒礼物：`blind.original_gift_name`=用户抽的盲盒名，`gift.gift_name`=实际爆出的礼物，`gift.total_coin`=盲盒爆出礼物价格（非盲盒原价）。
+- 盲盒礼物：`blind.original_gift_name`=用户抽的盲盒名，`gift.gift_name`=实际爆出的礼物，`gift.total_coin`=盲盒原本价格的总价（`blind_price * num`）。
 
 ### 其他高频事件
 
